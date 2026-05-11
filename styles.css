@@ -60,6 +60,7 @@ a { color: inherit; text-decoration: none; }
   background: #fff;
   border-bottom: 1px solid var(--line);
   padding: 14px 0;
+  position: relative;
 }
 
 .header-inner {
@@ -137,12 +138,11 @@ a { color: inherit; text-decoration: none; }
 }
 
 /* ---------- Mega menu dropdown (Company Directory) ---------- */
-.nav-dropdown { position: relative; }
-
 .mega-menu {
   display: none;
   position: absolute;
   top: 100%;
+  left: 0;
   right: 0;
   padding-top: 14px;
   z-index: 100;
@@ -157,8 +157,9 @@ a { color: inherit; text-decoration: none; }
   display: flex;
   background: #fff;
   box-shadow: 0 14px 36px rgba(0, 0, 0, 0.18);
-  width: 620px;
-  border: 1px solid var(--line);
+  width: 100%;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
 }
 
 .mega-left {

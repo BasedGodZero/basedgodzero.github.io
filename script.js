@@ -15,6 +15,7 @@
   const closeDropdowns = () => {
     header.querySelectorAll('.nav-dropdown.is-open')
       .forEach(d => d.classList.remove('is-open'));
+    header.classList.remove('subpanel-open');
   };
 
   toggle.addEventListener('click', () => {
@@ -34,6 +35,7 @@
         e.preventDefault();
         e.stopPropagation();
         dropdown.classList.add('is-open');
+        header.classList.add('subpanel-open');
       });
     }
 
@@ -42,6 +44,7 @@
         e.preventDefault();
         e.stopPropagation();
         dropdown.classList.remove('is-open');
+        header.classList.remove('subpanel-open');
       });
     }
   });

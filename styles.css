@@ -1054,7 +1054,10 @@ body.menu-open { overflow: hidden; }
   .header-right {
     display: none;
     position: fixed;
-    inset: var(--header-h, 64px) 0 0 0;
+    top: var(--header-h, 64px);
+    right: 0;
+    bottom: 0;
+    left: 0;
     width: 100vw;
     grid-column: auto;
     justify-self: auto;
@@ -1137,37 +1140,48 @@ body.menu-open { overflow: hidden; }
   .mega-menu {
     display: block;
     position: fixed;
-    inset: var(--header-h, 64px) 0 0 0;
+    top: var(--header-h, 64px);
+    right: 0;
+    bottom: 0;
+    left: 0;
     width: 100vw;
     margin: 0;
+    padding: 0;
     background: #fff;
     transform: translateX(100%);
     transition: transform 0.3s ease;
     z-index: 96;
     overflow-y: auto;
     box-sizing: border-box;
+    pointer-events: none;
+    visibility: hidden;
   }
   .nav-dropdown:hover .mega-menu,
   .nav-dropdown:focus-within .mega-menu {
     transform: translateX(100%);
+    pointer-events: none;
+    visibility: hidden;
   }
   .nav-dropdown.is-open .mega-menu,
   .nav-dropdown.is-open:hover .mega-menu,
   .nav-dropdown.is-open:focus-within .mega-menu {
     transform: translateX(0);
+    pointer-events: auto;
+    visibility: visible;
   }
 
   .mega-back {
     display: inline-flex;
     align-items: center;
     gap: 4px;
-    margin: 16px 16px 4px;
-    padding: 8px 8px 8px 0;
+    margin: 18px 24px 12px;
+    padding: 6px 6px 6px 0;
     background: none;
     border: 0;
     font-family: "Barlow Condensed", sans-serif;
+    font-style: italic;
     font-weight: 700;
-    font-size: 17px;
+    font-size: 18px;
     color: var(--ink);
     cursor: pointer;
   }
@@ -1178,25 +1192,34 @@ body.menu-open { overflow: hidden; }
     border: 0;
     background: #fff;
   }
-  .mega-left, .mega-right { flex: none; padding: 4px 24px; text-align: left; background: transparent; }
-  .mega-left { padding-bottom: 16px; }
+  .mega-left,
+  .mega-right { flex: none; padding: 0 24px; text-align: left; background: transparent; }
+  .mega-left { padding-top: 8px; padding-bottom: 8px; }
   .mega-left h3 {
-    font-size: 15px;
-    margin: 0 0 18px;
+    font-size: 16px;
+    margin: 0 0 14px;
     font-style: italic;
-    font-weight: 700;
+    font-weight: 600;
     color: var(--ink);
     text-transform: none;
     letter-spacing: 0;
   }
-  .mega-read-more {
-    font-size: 14px;
+  .mega-menu a.mega-read-more {
+    font-size: 18px;
+    gap: 12px;
   }
-  .mega-right { gap: 18px; padding-top: 18px; padding-bottom: 24px; }
+  .mega-read-more::before {
+    width: 28px;
+  }
+  .mega-right {
+    gap: 22px;
+    padding-top: 22px;
+    padding-bottom: 32px;
+  }
   .mega-menu .mega-right a {
     font-style: normal;
     font-weight: 700;
-    font-size: 17px;
+    font-size: 19px;
     letter-spacing: 0;
     text-transform: none;
   }

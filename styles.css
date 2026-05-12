@@ -1053,18 +1053,20 @@ body.menu-open { overflow: hidden; }
   .header-right {
     display: none;
     position: fixed;
-    top: var(--header-h, 64px);
-    left: 0;
-    right: 0;
-    bottom: 0;
+    inset: var(--header-h, 64px) 0 0 0;
+    width: 100vw;
+    grid-column: auto;
+    justify-self: auto;
     background: #fff;
     border-top: 1px solid var(--line);
     flex-direction: column;
     align-items: stretch;
     gap: 0;
     padding: 0;
+    margin: 0;
     overflow-y: auto;
     z-index: 95;
+    box-sizing: border-box;
   }
   .site-header.is-open .header-right { display: flex; }
 

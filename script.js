@@ -22,12 +22,22 @@
 
   header.querySelectorAll('.main-nav .nav-dropdown').forEach(dropdown => {
     const trigger = dropdown.querySelector(':scope > a');
-    if (!trigger) return;
-    trigger.addEventListener('click', (e) => {
-      if (window.matchMedia('(max-width: 720px)').matches) {
+    const back = dropdown.querySelector('.mega-back');
+
+    if (trigger) {
+      trigger.addEventListener('click', (e) => {
+        if (window.matchMedia('(max-width: 720px)').matches) {
+          e.preventDefault();
+          dropdown.classList.add('is-open');
+        }
+      });
+    }
+
+    if (back) {
+      back.addEventListener('click', (e) => {
         e.preventDefault();
-        dropdown.classList.toggle('is-open');
-      }
-    });
+        dropdown.classList.remove('is-open');
+      });
+    }
   });
 })();

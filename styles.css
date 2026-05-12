@@ -1000,6 +1000,7 @@ a { color: inherit; text-decoration: none; }
 }
 
 .mobile-menu-toggle { display: none; }
+.mega-back { display: none; }
 
 body.menu-open { overflow: hidden; }
 
@@ -1134,26 +1135,71 @@ body.menu-open { overflow: hidden; }
   }
 
   .mega-menu {
-    display: none;
-    position: static;
-    background: var(--card);
+    display: block;
+    position: fixed;
+    inset: var(--header-h, 64px) 0 0 0;
+    width: 100vw;
+    margin: 0;
+    background: #fff;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    z-index: 96;
+    overflow-y: auto;
+    box-sizing: border-box;
   }
-  .nav-dropdown.is-open .mega-menu { display: block; }
   .nav-dropdown:hover .mega-menu,
   .nav-dropdown:focus-within .mega-menu {
-    display: none;
+    transform: translateX(100%);
   }
+  .nav-dropdown.is-open .mega-menu,
   .nav-dropdown.is-open:hover .mega-menu,
   .nav-dropdown.is-open:focus-within .mega-menu {
-    display: block;
+    transform: translateX(0);
   }
+
+  .mega-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    margin: 16px 16px 4px;
+    padding: 8px 8px 8px 0;
+    background: none;
+    border: 0;
+    font-family: "Barlow Condensed", sans-serif;
+    font-weight: 700;
+    font-size: 17px;
+    color: var(--ink);
+    cursor: pointer;
+  }
+
   .mega-menu-inner {
     flex-direction: column;
     box-shadow: none;
+    border: 0;
+    background: #fff;
   }
-  .mega-left, .mega-right { flex: 1; padding: 20px 24px; text-align: left; }
-  .mega-left { background: transparent; }
-  .mega-left h3 { font-size: 18px; margin: 0 0 10px; }
+  .mega-left, .mega-right { flex: none; padding: 4px 24px; text-align: left; background: transparent; }
+  .mega-left { padding-bottom: 16px; }
+  .mega-left h3 {
+    font-size: 15px;
+    margin: 0 0 18px;
+    font-style: italic;
+    font-weight: 700;
+    color: var(--ink);
+    text-transform: none;
+    letter-spacing: 0;
+  }
+  .mega-read-more {
+    font-size: 14px;
+  }
+  .mega-right { gap: 18px; padding-top: 18px; padding-bottom: 24px; }
+  .mega-menu .mega-right a {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 17px;
+    letter-spacing: 0;
+    text-transform: none;
+  }
 
   .cards-grid, .cards-grid.cols-2, .cards-grid.cols-3 { grid-template-columns: 1fr; }
   .tiles-grid { grid-template-columns: repeat(3, 1fr); }

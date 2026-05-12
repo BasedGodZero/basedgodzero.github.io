@@ -81,7 +81,7 @@ a { color: inherit; text-decoration: none; }
 }
 
 .brand-img {
-  height: 65px;
+  height: 49px;
   width: auto;
   display: block;
 }
@@ -979,7 +979,7 @@ a { color: inherit; text-decoration: none; }
 @media (max-width: 720px) {
   .header-inner { grid-template-columns: 1fr; gap: 12px; }
   .brand-link { grid-column: 1; justify-self: center; }
-  .brand-img { height: 55px; }
+  .brand-img { height: 41px; }
   .header-right { grid-column: 1; align-items: center; }
   .utility-nav { font-size: 11px; flex-wrap: wrap; justify-content: center; }
   .main-nav { gap: 18px; flex-wrap: wrap; justify-content: center; }

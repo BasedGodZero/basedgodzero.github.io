@@ -1093,7 +1093,7 @@ body.menu-open { overflow: hidden; }
     border-bottom: 1px solid var(--line);
     position: relative;
     left: 0;
-    transition: left 0.6s ease;
+    transition: left 0.4s ease;
   }
   .utility-nav a {
     flex: 1;
@@ -1113,13 +1113,13 @@ body.menu-open { overflow: hidden; }
     gap: 0;
     position: relative;
     left: 0;
-    transition: left 0.6s ease;
+    transition: left 0.4s ease;
   }
 
   .site-header.subpanel-open .utility-nav,
   .site-header.subpanel-open .main-nav {
     left: -100%;
-    transition: left 0.8s ease;
+    transition: left 0.6s ease;
   }
   .main-nav > a,
   .main-nav > .nav-dropdown {
@@ -1177,7 +1177,7 @@ body.menu-open { overflow: hidden; }
     padding: 0;
     background: #fff;
     transform: translateX(100%);
-    transition: transform 0.1s ease, visibility 0s linear 0.1s;
+    transition: transform 0.4s ease, visibility 0s linear 0.4s;
     z-index: 96;
     overflow-y: auto;
     box-sizing: border-box;
@@ -1196,7 +1196,7 @@ body.menu-open { overflow: hidden; }
     transform: translateX(0);
     pointer-events: auto;
     visibility: visible;
-    transition: transform 0.1s ease, visibility 0s linear 0s;
+    transition: transform 0.4s ease, visibility 0s linear 0s;
   }
 
   .mega-back {
